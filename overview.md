@@ -17,7 +17,7 @@
 
 ## Tasks
 
-- [ ] Integrate tools from smolagents. crewAI is already compatible with langchain.
+- [x] Integrate tools from smolagents. crewAI is already compatible with langchain.
 - [ ] Learn about memory management in crewAI.
 - [ ] Create utilities for machine learning.
 - [ ] Create tools using the utilities.
