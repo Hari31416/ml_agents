@@ -156,6 +156,23 @@ Most of the important methods in the `ml_utils` module will be converted into to
   - Agent: LeadScientistAgent
   - Expected Output: Serialized model + metadata
 
+### Crew
+
+- **DataCrew**
+
+  - Tasks: DataPreprocessingTask, FeatureEngineeringTask
+  - Agents: DataPreprocessingAgent, FeatureEngineerAgent
+
+- **ModelCrew**
+
+  - Tasks: ModelSelectionTask, HyperparameterTuningTask
+  - Agents: ModelArchitectAgent, HyperparameterOptimizerAgent
+
+- **ValidationCrew**
+
+  - Tasks: ModelValidationTask, DeploymentPreparationTask
+  - Agents: ValidationAgent, LeadScientistAgent
+
 ## To-Dos
 
 - [x] Integrate tools from smolagents. crewAI is already compatible with langchain.
@@ -166,10 +183,16 @@ Most of the important methods in the `ml_utils` module will be converted into to
   - [x] Agents
   - [x] Tasks
   - [x] Crew
-    - [ ] One or many?
+    - [x] One or many? Many! So that we can run other tasks without any dependency on the previous tasks. Possible crews:
+      - Data Crew
+      - Model Crew
+      - Validation Crew
 - [ ] How to connect the `ml_tools` with `ml_utils`?
-  - [ ] How to handle data type like dataframe, series etc. in tools?
-  - [ ] Docstrings? I prefer numpy style, crewAI uses google style.
+  - [ ] How to handle data type like dataframe, series, list etc. in tools?
+    - [x] JSON-serializable data are handled just fine.
+    - [ ] Need to handle other data types. crewAI does not provide a way to pass some variables that are accessible by all the tools. Need a hack to pass the input data to all the tools.
+  - [x] Docstrings? I prefer numpy style, crewAI uses google style.
+    - [x] No issue! crewAI passes the complete docstring to the agent. The LLM should be able to handle it.
   - [ ] How to avoid repetition of code?
 - [ ] Create utilities for machine learning.
   - [ ] Preprocessing
