@@ -207,3 +207,7 @@ Most of the important methods in the `ml_utils` module will be converted into to
 - [ ] Create agents, tasks and crews.
 - [ ] Learn new things.
   - [ ] Learn about memory management in crewAI.
+
+### Extra Features
+
+- Create web UI for the agents using Gradio/Streamlit.
